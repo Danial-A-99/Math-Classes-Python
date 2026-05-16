@@ -6,5 +6,5 @@ Current classes:
 - Linear Functions
 - Quadratic Functions
 - Trigonometric Functions
-- Polynomials (Simplifying Them) (Partialy Complete)
+- Polynomials (Simplifying Them) (Partialy Complete) 
 - Power Rule Deriver (Partialy Complete)
