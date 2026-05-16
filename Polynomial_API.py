@@ -92,6 +92,6 @@ class Polynomial_Function:
         equation = self.exponent_replacer(final_equation.replace(" + -"," - ")[:-2])
         return equation
 
-obje = Polynomial_Function("3x^10 4x^9 7x^8 6x^7 5x^6 12x^5 3x^5 4x^4 0.25x^3 1x^1")
+obje = Polynomial_Function("3x^10 4x^10 7x^8 6x^6 5x^6 12x^5 3x^5 4x^4 0.25x^1")
 
 print(obje.regroup_terms())
