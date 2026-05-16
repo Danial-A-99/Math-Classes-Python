@@ -18,19 +18,20 @@ class Power_Rule:
       else:
         exps.append(temp_equation[i])
     return coeffs,exps
-    
-  def derive_to(self,place):
-    coeffs = self.split_equation()[0]
-    exps = self.split_equation()[1]
+  
+  def deriver_func(self,coeffs,exps):
     newcoeffs = []
     newexps = []
     tempexps = []
     for val in exps:
-      if "^" in val:
-        tempexps.append(val.replace("^",""))
-      else:
+      try:
+        if "^" in val:
+          tempexps.append(val.replace("^",""))
+        else:
+          tempexps.append(val)
+      except:
         tempexps.append(val)
-
+        
     for i in range(len(coeffs)):
       try:
         tempexpval = float(tempexps[i])
@@ -48,14 +49,33 @@ class Power_Rule:
 
     return newcoeffs,newexps
   
-  def re_assemble(self):
-    pass
+  def derive_to(self,place):
+    coeffs = self.split_equation()[0]
+    exps = self.split_equation()[1]
+    for i in range(place):
+      coeffs = self.deriver_func(coeffs,exps)[0]
+      exps = self.deriver_func(coeffs,exps)[1]
+
+    return coeffs,exps
+  
+  def re_assemble(self,place):
+    coeffs = self.derive_to(place)[0]
+    exps = self.derive_to(place)[1]
+    answer = ""
+    for i in range(len(coeffs)):
+       answer += f"{coeffs[i]}x^{exps[i]} + "
+    tempanswer = answer.split()
+    for val in tempanswer:
+      if val.endswith("x^"):
+        tempanswer.remove(val)
+    while tempanswer[-1] == "+":
+      tempanswer.pop(-1)
+    answer = " ".join(tempanswer)
+
+    return answer.replace("+ 0x^","").replace("x^0","").replace(".0","").replace("^1 "," ").replace("+ +","")
 
 
-obje = Power_Rule("3x^3 4x^2 7x")    
+obje = Power_Rule("3x^10 4x^9 7x^8 6x^7 5x^6 12x^5 4x^4 0.25x^3 3x^2 1x^1")    
 
-print(obje.derive_to(2)[0])
-
-print(obje.derive_to(2)[1])
-
+print(obje.re_assemble(6))
      
