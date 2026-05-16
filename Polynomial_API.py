@@ -49,7 +49,7 @@ class Polynomial_Function:
         while True:
             try: # fix up logic
                 if var[i] == var[i+1] and exp[i] == exp[i+1]:
-                    new_coef.append(coef[i] + coef[i+1])
+                    new_coef.append(float(coef[i]) + float(coef[i+1]))
                     new_var.append(var[i])
                     new_exp.append(exp[i])
                     i += 1
@@ -88,10 +88,10 @@ class Polynomial_Function:
         coeffs,var,exp = self.group_similar_vals()
         final_equation = ""
         for i in range(len(coeffs)):
-            final_equation += (f"{str(eval(coeffs[i]))}{var[i]}{exp[i]} + ")
+            final_equation += (f"{str((coeffs[i]))}{var[i]}{exp[i]} + ")
         equation = self.exponent_replacer(final_equation.replace(" + -"," - ")[:-2])
         return equation
 
-obje = Polynomial_Function("2x^6 - 4x^6 + 5b^9 - 6b^9 + 7c^1")
+obje = Polynomial_Function("3x^10 4x^9 7x^8 6x^7 5x^6 12x^5 3x^5 4x^4 0.25x^3 1x^1")
 
 print(obje.regroup_terms())
