@@ -29,7 +29,7 @@ class Linear_Function:
         self.m = (x2-x1)/(y2-y1)
 
     def display_equation(self):
-        print(f"y = ({self.m})({self.x}) + ({self.b})")
+        print(f"y = ({self.m})x + ({self.b})")
 
     def get_y_val(self):
         return self.m*self.x + self.b

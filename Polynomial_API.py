@@ -65,14 +65,33 @@ class Polynomial_Function:
                 break
 
         return new_coef,new_var,new_exp
+    
+    def exponent_replacer(self,equation):
+        equation = (equation.replace("^0","⁰^").replace("^1","¹^").replace("^2","²^").replace("^3","³^").replace("^4","⁴^").replace("^5","⁵^").replace("^6","⁶^").replace("^7","⁷^").replace("^8","⁸^").replace("^9","⁹^").replace("^-0","⁻⁰^").replace("^-1","⁻¹^").replace("^-2","⁻²^").replace("^-3","⁻³^").replace("^-4","⁻⁴^").replace("^-5","⁻⁵^").replace("^-6","⁻⁶^").replace("^-7","⁻⁷^").replace("^-8","⁻⁸^").replace("^-9","⁻⁹^"))
+        if "^" not in equation:
+            print(equation)
+        else:
+            while True:
+                equation = (equation.replace("^0","⁰^").replace("^1","¹^").replace("^2","²^").replace("^3","³^").replace("^4","⁴^").replace("^5","⁵^").replace("^6","⁶^").replace("^7","⁷^").replace("^8","⁸^").replace("^9","⁹^").replace("^-0","⁻⁰^").replace("^-1","⁻¹^").replace("^-2","⁻²^").replace("^-3","⁻³^").replace("^-4","⁻⁴^").replace("^-5","⁻⁵^").replace("^-6","⁻⁶^").replace("^-7","⁻⁷^").replace("^-8","⁻⁸^").replace("^-9","⁻⁹^"))
+                equation = equation.strip()
+                if equation[-2] == "^" or "^0" not in equation or "^1" not in equation or "^2" not in equation or "^3" not in equation or "^4" not in equation or "^5" not in equation or "^6" not in equation or "^7" not in equation or "^8" not in equation or "^9" not in equation:
+                    if "^0" in equation or "^1" in equation or "^2" in equation or "^3" in equation or "^4" in equation or "^5" in equation or "^6" in equation or "^7" in equation or "^8" in equation or "^9" in equation:
+                        pass
+                    else:
+                        equation = equation.replace("^","")
+                        break
+                else:
+                    pass
+        return equation
 
     def regroup_terms(self):
         coeffs,var,exp = self.group_similar_vals()
         final_equation = ""
         for i in range(len(coeffs)):
             final_equation += (f"{str(eval(coeffs[i]))}{var[i]}{exp[i]} + ")
-        return final_equation.replace(" + -"," - ")[:-2]
+        equation = self.exponent_replacer(final_equation.replace(" + -"," - ")[:-2])
+        return equation
 
-obje = Polynomial_Function("2x^6 - 4x^6 + 5b^9 - 6b^9 + 7c^1 + 7c^1")
+obje = Polynomial_Function("2x^6 - 4x^6 + 5b^9 - 6b^9 + 7c^1")
 
 print(obje.regroup_terms())

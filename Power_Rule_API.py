@@ -1,6 +1,7 @@
 
 
 class Power_Rule:
+
   def __init__(self,equation:str):
     self.equation = equation
 
@@ -71,11 +72,14 @@ class Power_Rule:
     while tempanswer[-1] == "+":
       tempanswer.pop(-1)
     answer = " ".join(tempanswer)
+    answer = answer.replace("+ 0x^","").replace("x^0","").replace(".0","").replace("^1 "," ").replace("+ +","")
+    return answer
 
-    return answer.replace("+ 0x^","").replace("x^0","").replace(".0","").replace("^1 "," ").replace("+ +","")
 
+user_inp = input("Enter The Equation: ")
+to_point = int(input("Derive to: "))
+#"3x^10 4x^9 7x^8 6x^7 5x^6 12x^5 4x^4 0.25x^3 3x^5 1x^1"
+obje = Power_Rule(user_inp)    
 
-obje = Power_Rule("3x^10 4x^9 7x^8 6x^7 5x^6 12x^5 4x^4 0.25x^3 3x^2 1x^1")    
-
-print(obje.re_assemble(6))
+print(obje.re_assemble(to_point))
      
