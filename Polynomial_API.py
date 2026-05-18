@@ -89,9 +89,11 @@ class Polynomial_Function:
         final_equation = ""
         for i in range(len(coeffs)):
             final_equation += (f"{str((coeffs[i]))}{var[i]}{exp[i]} + ")
-        equation = self.exponent_replacer(final_equation.replace(" + -"," - ")[:-2])
+        equation = self.exponent_replacer(final_equation.replace(" + -"," - ").replace(" + +"," + ")[:-2])
         return equation
 
-obje = Polynomial_Function("3x^10 4x^10 7x^8 6x^6 5x^6 12x^5 3x^5 4x^4 0.25x^1")
 
-print(obje.regroup_terms())
+if __name__ == "__main__":
+    obje = Polynomial_Function("3x^10 + 4x^10 + 7x^8 - 6x^6 + 5x^6 - 12x^5 - 3x^5 + 4x^4 - 0.25x^1")
+
+    print(obje.regroup_terms())
