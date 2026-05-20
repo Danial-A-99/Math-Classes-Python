@@ -6,10 +6,8 @@ class Power_Rule:
     self.equation = equation
 
   def split_equation(self):
-    temp_equation = self.equation.split(" ")
-    temp_equation = "|".join(temp_equation)
-    temp_equation = temp_equation.split("x")
-    temp_equation = "|".join(temp_equation)
+    temp_equation = "|".join(self.equation.split(" "))
+    temp_equation = "|".join(temp_equation.split("x"))
     temp_equation = temp_equation.split("|")
     coeffs = []
     exps = []
