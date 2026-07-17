@@ -1,5 +1,8 @@
 
 
+import __main__
+
+
 class Power_Rule:
 
   def __init__(self,equation:str):
@@ -73,12 +76,14 @@ class Power_Rule:
     answer = answer.replace("+ 0x^","").replace("x^0","").replace(".0","").replace("^1 "," ").replace("+ +","")
     return answer
 
-from Polynomial_API import Polynomial_Function
-user_inp = Polynomial_Function(input("Enter The Equation: "))
-user_inp = " ".join(user_inp.sep_term())
-to_point = int(input("Derive to: "))
-#"3x^10 4x^9 7x^8 6x^7 5x^6 12x^5 4x^4 0.25x^3 3x^5 1x^1"
-obje = Power_Rule(user_inp)    
 
-print(obje.re_assemble(to_point))
+if __name__ == __main__:
+  from Polynomial_API import Polynomial_Function
+  user_inp = Polynomial_Function(input("Enter The Equation: "))
+  user_inp = " ".join(user_inp.sep_term())
+  to_point = int(input("Derive to: "))
+  #"3x^10 4x^9 7x^8 6x^7 5x^6 12x^5 4x^4 0.25x^3 3x^5 1x^1"
+  obje = Power_Rule(user_inp)    
+
+  print(obje.re_assemble(to_point))
      
