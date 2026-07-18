@@ -45,10 +45,17 @@ class Quadratic_Function:
             print("No Roots Exist")
 
     def display_standard_form(self):
-        print(f"f(x) = {self.a}x^2 + {self.b}x + {self.c}")
+        print(f"f(x) = {self.a}x² + {self.b}x + {self.c}")
+    
+    def display_point_slope_form(self):
+        print(f"f(x) = {self.a}(x + {((self.b/self.a)/2)})² + {self.c-(self.a*(((self.b/self.a)/2)**2))}".replace("+ -","- ").replace(" 1(",""))
         
     def y_intercept(self):
         return self.c
     
     def max_value(self):
         return self.a <= 0
+    
+if __name__ == "__main__":
+    obje = Quadratic_Function(1,1,1)
+    obje.display_point_slope_form()

@@ -57,6 +57,11 @@ class Graphing_API:
     def change_grid_linestyle(self,linestyle):
         self.grid_linestyle = linestyle
 
+    def inverse_points(self):
+        xpoints = self.ypoints
+        ypoints = self.xpoints
+        return xpoints,ypoints
+
     def plot_two_line_graph(self,args):
         plt.title(self.title)
         plt.xlabel(self.xlabel)

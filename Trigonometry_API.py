@@ -34,3 +34,15 @@ class Trigonometric_Function:
     
     def tan_rad(self):
         return math.tan(self.theta)
+    
+    def sine_law_2sides(self,sideA,sideB,angleA):
+        angleB = self.theta_by_sin((sideB*self.sin_deg(angleA))/sideA)
+        return angleB
+    
+    def sine_law_2angles(self,sideA,angleA,angleB):
+        sideB = sideA*self.sin_deg(angleB)/self.sin_deg(angleA)
+        return sideB
+    
+    def cosine_law(self,angleA,sideB,sideC):
+        sideA = sideB**2 + sideC**2 - 2*sideB*sideC*self.cos_deg(angleA)
+        return sideA

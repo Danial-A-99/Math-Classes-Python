@@ -8,3 +8,5 @@ Current classes:
 - Trigonometric Functions
 - Polynomials (Simplifying Them) (Partialy Complete) 
 - Power Rule Deriver (Partialy Complete)
+- Graphing Functions and Plotting Data (Not Finished)
+- Trigonometric Identites (Not Finished)
