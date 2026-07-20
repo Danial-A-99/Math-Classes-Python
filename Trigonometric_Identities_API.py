@@ -9,3 +9,4 @@ class Trigonometric_Identities:
     def __init__(self,equation):
         self.equation = equation
 
+
