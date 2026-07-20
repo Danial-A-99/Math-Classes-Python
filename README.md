@@ -10,3 +10,4 @@ Current classes:
 - Power Rule Deriver (Partialy Complete)
 - Graphing Functions and Plotting Data (Not Finished)
 - Trigonometric Identites (Not Finished)
+- Factoring API (Not Finished)
