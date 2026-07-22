@@ -26,7 +26,7 @@ class Linear_Function:
         return self.b
     
     def set_slope_by_coord(self,x1,y1,x2,y2):
-        self.m = (x2-x1)/(y2-y1)
+        self.m = (y2-y1)/(x2-x1)
 
     def display_equation(self):
         print(f"y = ({self.m})x + ({self.b})")
