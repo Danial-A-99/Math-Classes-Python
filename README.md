@@ -6,8 +6,10 @@ Current classes:
 - Linear Functions
 - Quadratic Functions
 - Trigonometric Functions
-- Polynomials (Simplifying Them) (Partialy Complete) 
+- Polynomials (Simplifying Them) (Details About Polynomials) (Partialy Complete) 
 - Power Rule Deriver (Partialy Complete)
 - Graphing Functions and Plotting Data (Not Finished)
 - Trigonometric Identites (Not Finished)
 - Factoring API (Not Finished)
+- Frequently Used Programs (Math Programs)
+- Shape API (Calculates Shape Features)

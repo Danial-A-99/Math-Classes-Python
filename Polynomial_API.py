@@ -1,4 +1,4 @@
-from Factorial_Func import factorial
+from Freq_Math import frequent_functions
 
 class Polynomial_Function:
     alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n",
@@ -157,7 +157,10 @@ class Polynomial_Details:
                     x+=1
             ycoords = diff_list
             turns +=1
-        lead_coeff = ycoords[0]/factorial(turns) 
+
+        n_val = frequent_functions()
+        n_val = n_val.factorial(turns)
+        lead_coeff = ycoords[0]/n_val 
         return lead_coeff
     
     def max_turning_poins(self):
