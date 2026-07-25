@@ -61,7 +61,7 @@ class Shape_Function:
         volume = length*width*height
         return volume
 
-    def cylinder_colume(self,radius,height):
+    def cylinder_volume(self,radius,height):
         volume = Shape_Function.PI*radius**2*height
         return volume
 

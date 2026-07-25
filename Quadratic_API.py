@@ -42,7 +42,7 @@ class Quadratic_Function:
         if self.roots_exist():
             print(f"f(x) = {self.a}(x - {self.roots_finder()[0]}) (x - {self.roots_finder()[1]})")
         else:
-            print("No Roots Exist")
+            print("No Real Roots Exist")
 
     def display_standard_form(self):
         print(f"f(x) = {self.a}x² + {self.b}x + {self.c}")
@@ -57,5 +57,7 @@ class Quadratic_Function:
         return self.a <= 0
     
 if __name__ == "__main__":
-    obje = Quadratic_Function(1,1,1)
+    obje = Quadratic_Function(1,5,6)
+    obje.display_standard_form()
     obje.display_point_slope_form()
+    obje.display_root_form()
