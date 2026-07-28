@@ -37,9 +37,6 @@ class Trigonometric_Identities:
     def mutate_side(self):
         side = self.pick_side_to_simplify()[0]
 
-        
-
-        
 
 if __name__ == "__main__":
 

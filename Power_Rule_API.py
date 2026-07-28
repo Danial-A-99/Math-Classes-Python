@@ -1,8 +1,4 @@
 
-
-import __main__
-
-
 class Power_Rule:
 
   def __init__(self,equation:str):
