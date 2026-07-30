@@ -32,7 +32,7 @@ class Rational_Functions_Func:
             temp_val = valu.replace("(","").replace(")","")
             temp_val = temp_val.split("x")
             print(temp_val)
-            print(temp_val)
+            print(temp_val) 
             print(temp_val)
 
 if __name__ == "__main__":
