@@ -82,17 +82,5 @@ class Trig_Expressions_Function:
 
 if __name__ == "__main__":
     obje = Trig_Expressions_Function()
-    print("\nRight Triangle")
-    obje.display_trig_ids_rt()
-    print("\nTransformations")
-    obje.display_trig_ids_transformations()
-    print("\nodd functions")
-    obje.display_trig_ids_odd_func()
-    print("\neven functions")
-    obje.display_trig_ids_even_func()
-    print("\ncompound angles")
-    obje.display_trig_ids_compound_angles()
-    print("\ndouble angles")
-    obje.display_trig_ids_double_angles()
-    print("\nhalf angles")
-    obje.display_trig_ids_half_angles()
+    for value in obje.trig_ids_rt()["cosθ"]:
+        print(value)

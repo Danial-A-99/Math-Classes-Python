@@ -1,4 +1,4 @@
-
+from Graphing_API import Graphing_Function
 
 class Quadratic_Function:
     
@@ -114,7 +114,30 @@ f(x) = {self.a}(x² + {((self.b/self.a)/2)**2}) + {-(self.a*(((self.b/self.a)/2)
     
     def max_value(self):
         return self.a <= 0
+
+    def get_vertex(self):
+        xcoord = ((self.b/self.a)/2)
+        ycoord = self.c-(self.a*(((self.b/self.a)/2)**2))
+        return xcoord,ycoord
+
+    def get_quadratic_function_coords(self):
+        xcoords = []
+        ycoords = []
+        vertex_x_coord = self.get_vertex()[0]
+        for x in range(int(vertex_x_coord - 100), int(vertex_x_coord + 100)):
+            ycoords.append(self.a*x**2 + self.b*x + self.c)
+            xcoords.append(x)
+        return xcoords,ycoords
+
+    def graph_quadratic_function(self):
+        graph = Graphing_Function()
+        graph.add_x_points(self.get_quadratic_function_coords()[0])
+        graph.add_y_points(self.get_quadratic_function_coords()[1])
+        graph.change_graph_picture_name("Quadratic_Graph")
+        graph.plot_graph()
+        
     
 if __name__ == "__main__":
-    obje = Quadratic_Function(1,5,6)
+    obje = Quadratic_Function(200,5,6)
     obje.display_root_form_with_steps()
+    obje.graph_quadratic_function()

@@ -1,23 +1,24 @@
-
+from Graphing_API import Graphing_Function
 class Trig_Functions_Function:
 
     def __init__(self):
         pass
 
-    def display_trig_function(self):
-        pass # Need to write code that connects this to Graphing API
+    def graph_trig_function(self,xcoords,ycoords):
+        graph = Graphing_Function()
+        graph.add_x_points(xcoords)
+        graph.add_y_points(ycoords)
+        graph.change_graph_picture_name("Trig_Graph")
+        graph.plot_graph()
 
     def sine_standard_coords(self):
-        return [0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330,360],
-    [0,1/2,(2**0.5)/2,(3**0.5)/2,1,(3**0.5)/2,(2**0.5)/2,1/2,0,-0.5,-(2**0.5)/2,-(3**0.5)/2,-1,-(3**0.5)/2,-(2**0.5)/2,-1/2,0]
+        return [0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330,360],[0,1/2,(2**0.5)/2,(3**0.5)/2,1,(3**0.5)/2,(2**0.5)/2,1/2,0,-0.5,-(2**0.5)/2,-(3**0.5)/2,-1,-(3**0.5)/2,-(2**0.5)/2,-1/2,0]
 
     def cosine_standard_coords(self):
-        return [0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330,360],
-    [1,(3**0.5)/2,(2**0.5)/2,1/2,0,-1/2,-(2**0.5)/2,-(3**0.5)/2,-1,-(3**0.5)/2,-(2**0.5)/2,-1/2,0,1/2,(2**0.5)/2,(3**0.5)/2,1]
+        return [0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330,360],[1,(3**0.5)/2,(2**0.5)/2,1/2,0,-1/2,-(2**0.5)/2,-(3**0.5)/2,-1,-(3**0.5)/2,-(2**0.5)/2,-1/2,0,1/2,(2**0.5)/2,(3**0.5)/2,1]
 
     def tangent_standard_coords(self):
-        return [0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330,360],
-    [0,(3**0.5)/2,1,(3**0.5),"UND",-(3**0.5),-1,-(3**0.5)/2,0,(3**0.5)/2,1,(3**0.5),"UND",-(3**0.5),-1,-(3**0.5)/2,0]
+        return [0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330,360],[0,(3**0.5)/2,1,(3**0.5),"UND",-(3**0.5),-1,-(3**0.5)/2,0,(3**0.5)/2,1,(3**0.5),"UND",-(3**0.5),-1,-(3**0.5)/2,0]
 
     def instructions_for_reciprocal(self):
         print("For csc & sec : x-intercepts = assymptotes | peaks and trophs = vertexes | Pos of peak/troph relative to center determines - or + a")
@@ -29,11 +30,11 @@ class Trig_Functions_Function:
         xcoords,ycoords = [],[]
         generate_coords = True
         if sct == "s":
-            xcoords,ycoords = self.sine_standard_coords[0],self.sine_standard_coords[1]
+            xcoords,ycoords = self.sine_standard_coords()[0],self.sine_standard_coords()[1]
         elif sct == "c":
-            xcoords,ycoords = self.cosine_standard_coords[0],self.cosine_standard_coords[1]
+            xcoords,ycoords = self.cosine_standard_coords()[0],self.cosine_standard_coords()[1]
         elif sct == "t":
-            xcoords,ycoords = self.tangent_standard_coords[0],self.tangent_standard_coords[1]
+            xcoords,ycoords = self.tangent_standard_coords()[0],self.tangent_standard_coords()[1]
         else:
             print("Please Enter Valid: s,c or t")
             generate_coords = False
@@ -45,15 +46,15 @@ class Trig_Functions_Function:
                 transformed_y_coords.append(a*y_coord + c)  
             return transformed_x_coords,transformed_y_coords
 
-    def instructions_for_reciprocal(self,sct):
+    def reciprocal_coords(self,sct):
         inverted_y_coords = []
         generate_coords = True
         if sct == "s":
-            xcoords,ycoords = self.sine_standard_coords[0],self.sine_standard_coords[1]
+            xcoords,ycoords = self.sine_standard_coords()[0],self.sine_standard_coords()[1]
         elif sct == "c":
-            xcoords,ycoords = self.cosine_standard_coords[0],self.cosine_standard_coords[1]
+            xcoords,ycoords = self.cosine_standard_coords()[0],self.cosine_standard_coords()[1]
         elif sct == "t":
-            xcoords,ycoords = self.tangent_standard_coords[0],self.tangent_standard_coords[1]
+            xcoords,ycoords = self.tangent_standard_coords()[0],self.tangent_standard_coords()[1]
         else:
             print("Please Enter Valid: s,c or t")
             generate_coords = False
@@ -61,7 +62,12 @@ class Trig_Functions_Function:
         if generate_coords:
             for y_coord in ycoords:
                 inverted_y_coords.append(y_coord*-1)
-            return inverted_y_coords
+            return xcoords,inverted_y_coords
+
+if __name__ == "__main__":
+    obje = Trig_Functions_Function()
+
+    obje.graph_trig_function(obje.reciprocal_coords("s")[0],obje.reciprocal_coords("s")[1])
         
     
 
