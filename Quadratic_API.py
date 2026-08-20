@@ -138,6 +138,6 @@ f(x) = {self.a}(x² + {((self.b/self.a)/2)**2}) + {-(self.a*(((self.b/self.a)/2)
         
     
 if __name__ == "__main__":
-    obje = Quadratic_Function(200,5,6)
+    obje = Quadratic_Function(-5,5,2000)
     obje.display_root_form_with_steps()
     obje.graph_quadratic_function()

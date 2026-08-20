@@ -1,7 +1,10 @@
 
 class Power_Rule:
 
-  def __init__(self,equation:str):
+  def __init__(self,equation:str=''):
+    self.equation = equation
+
+  def set_new_equation(self,equation:str):
     self.equation = equation
 
   def split_equation(self):

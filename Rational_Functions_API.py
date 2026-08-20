@@ -2,9 +2,9 @@ from Factoring_API import Factoring_Function
 
 class Rational_Functions_Func:
 
-    def __init__(self):
-        self.numerator_func = ""
-        self.denomenator_func = ""
+    def __init__(self,numerator_func='',denomenator_func=''):
+        self.numerator_func = numerator_func
+        self.denomenator_func = denomenator_func
 
     def set_numer_func(self,new_func):
         self.numerator_func = new_func

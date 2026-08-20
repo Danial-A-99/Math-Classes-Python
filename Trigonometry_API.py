@@ -2,7 +2,7 @@
 import math
 class Trigonometric_Function:
     
-    def __init__(self,theta:float|int):
+    def __init__(self,theta:float|int=1):
         self.theta = theta
 
     def set_theta(self,new_val:float|int):

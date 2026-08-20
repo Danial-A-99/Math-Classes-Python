@@ -3,7 +3,10 @@ from Polynomial_API import Polynomial_Function
 
 class Factoring_Function:
 
-    def __init__(self,equation):
+    def __init__(self,equation=''):
+        self.equation = equation
+
+    def set_equation(self,equation):
         self.equation = equation
 
     def split_values(self):

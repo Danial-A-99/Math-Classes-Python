@@ -2,7 +2,7 @@ from Graphing_API import Graphing_Function
 
 class Linear_Function:
     
-    def __init__(self,m:float,x:float,b:float):
+    def __init__(self,m:float=0,x:float=0,b:float=0):
         self.m = m
         self.x = x
         self.b = b

@@ -1,12 +1,16 @@
 import math
 
 class Radian_Measure_Function:
-    def __init__(self):
-        self.theta = None
-        self.PI = math.pi
+    PI = math.pi
+
+    def __init__(self,theta=None):
+        self.theta = theta
+
+    def set_theta(self,new_theta):
+        self.theta=new_theta
 
     def rad_to_deg(self):
-        return 180/self.PI * self.theta
+        return 180/Radian_Measure_Function.PI * self.theta
 
     def deg_to_rad(self,deg_theta):
         return math.PI/(180/deg_theta)
