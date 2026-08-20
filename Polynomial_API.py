@@ -92,13 +92,13 @@ class Polynomial_Function:
         equation = self.exponent_replacer(final_equation.replace(" + -"," - ").replace(" + +"," + ")[:-2])
         return equation
 
-class Polynomial_Details:
+class Polynomial_Details(Polynomial_Function):
+    
     def __init__(self,equation):
         self.equation = equation
-        obje = Polynomial_Function(self.equation)
-        self.constants = obje.sep_c_v_e()[0]
-        self.variables = obje.sep_c_v_e()[1]
-        self.exponents = obje.sep_c_v_e()[2]
+        self.constants = super().sep_c_v_e()[0]
+        self.variables = super().sep_c_v_e()[1]
+        self.exponents = super().sep_c_v_e()[2]
     
     def e_and_c_of_func(self):
         location = self.exponents.index(max(self.exponents))
@@ -194,6 +194,7 @@ class Polynomial_Details:
     
 
 if __name__ == "__main__":
-    obje = Polynomial_Function("3x^10 + 4x^10 + 7x^8 - 6x^6 + 5x^6 - 12x^5 - 3x^5 + 4x^4 - 0.25x^1")
-
-    print(obje.regroup_terms())
+    obje1 = Polynomial_Function("3x^10 + 4x^10 + 7x^8 - 6x^6 + 5x^6 - 12x^5 - 3x^5 + 4x^4 - 0.25x^1")
+    print(obje1.regroup_terms())
+    obje = Polynomial_Details("2x^2 + 3x^3 + 1x^1 + 5")
+    print(obje.e_and_c_of_func())

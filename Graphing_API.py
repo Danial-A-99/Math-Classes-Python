@@ -79,7 +79,7 @@ class Graphing_Function:
             plt.plot(other_xpoints, other_ypoints)
         plt.grid(self.yn_grid,color=self.color)
         plt.show()
-        plt.savefig(self.graph_pic_name)
+        plt.savefig(f'Graph_Pics/{self.graph_pic_name}')
 
     def scatter_plot_graph(self,args):
         plt.title(self.title)
@@ -93,7 +93,7 @@ class Graphing_Function:
             plt.scatter(other_xpoints, other_ypoints, color=self.color)
         plt.grid(self.yn_grid,color=self.color)
         plt.show()
-        plt.savefig(self.graph_pic_name)
+        plt.savefig(f'Graph_Pics/{self.graph_pic_name}')
 
     def plot_graph(self):
         plt.title(self.title)
@@ -102,7 +102,7 @@ class Graphing_Function:
         plt.plot(self.xpoints, self.ypoints, marker=self.marker, color=self.color, linestyle=self.line_style, linewidth=self.line_width)
         plt.grid(self.yn_grid,color=self.color)
         plt.show()
-        plt.savefig(self.graph_pic_name)
+        plt.savefig(f'Graph_Pics/{self.graph_pic_name}')
 
 
 if __name__ == "__main__":
@@ -110,5 +110,5 @@ if __name__ == "__main__":
 
     obje.add_x_points([1,2,3,4,5,6,7])
     obje.add_y_points([2,3,4,5,6,7,8])
-    obje.scatter_plot_graph()
+    obje.scatter_plot_graph((1,2,3,4,5,6,2,3,4,6,7,8)) # this has an error
     obje.plot_graph()
