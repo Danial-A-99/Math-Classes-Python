@@ -21,6 +21,18 @@ class Exponential_Function:
     def get_change_of_base_formula(self):
         return "log♭x = logₐx ÷ logₐ♭"
 
+    def get_power_law_of_logatithms_2(self):
+        return "log♭(mⁿ) = nlog♭m"
+
+    def get_product_multiplication_law(self):
+        return "log♭(m x n) = log♭m + log♭n"
+
+    def get_quotients_division(self):
+        return "log♭(m / n) = log♭m - log♭n"
+
+    def get_thechnique_for_solving_log_equations(self):
+        return "logₐm = logₐn then m = n"
+
     def subscript_replacer(self,inverted_expo_func):
             equation = (inverted_expo_func.replace("_0","₀_").replace("_1","₁_").replace("_2","₂_").replace("_3","₃_").replace("_4","₄_").replace("_5","₅_").replace("_6","₆_").replace("_7","₇_").replace("_8","₈_").replace("_9","₉_").replace("_-0","₋₀_").replace("_-1","₋₁_").replace("_-2","₋₂_").replace("_-3","₋₃_").replace("_-4","₋₄_").replace("_-5","₋₅_").replace("_-6","₋₆_").replace("_-7","₋₇_").replace("_-8","₋₈_").replace("_-9","₋₉_"))
             if "_" not in equation:
