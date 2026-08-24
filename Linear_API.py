@@ -28,11 +28,30 @@ class Linear_Function:
     def set_slope_by_coord(self,x1,y1,x2,y2):
         self.m = (y2-y1)/(x2-x1)
 
+    def display_slope_by_coord_with_steps(self,x1,y1,x2,y2):
+        print("Finding Slope By Coordonates:")
+        print("Step 1: Sub In the variables into m = (y2-y1)/(x2-x1)")
+        print(f"m = ({y2} - {y1}) / ({x2} - {x1})")
+        print("Step 2: Solve the Numerator & Denomenator")
+        print(f"m = ({y2 - y1}) / ({x2 - x1})")
+        print("Step 3: Divide the Numerator & Denomenator to get m")
+        print(f"m = {(y2-y1)/(x2-x1)}")
+
     def display_equation(self):
         print(f"y = ({self.m})x + ({self.b})")
 
     def get_y_val(self):
         return self.m*self.x + self.b
+
+    def display_y_val_steps(self):
+        print("Solving For The Y Value:")
+        print("Step 1: Sub In The Variables m,x,b")
+        print(f"y = {self.m}({self.x}) + {self.b}")
+        print("Step 2: Find the Product of m & x")
+        print(f"y = {self.m*self.x} + {self.b}")
+        print("Step 2: Solve the Rest of the equation for y")
+        print(f"y = {self.m*self.x + self.b}")
+
 
     def get_linear_equation_coordinates(self):
         xcoords = []
