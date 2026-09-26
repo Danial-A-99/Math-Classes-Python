@@ -15,4 +15,14 @@ class frequent_functions:
         avg = sum_of_terms/num_of_terms
         return avg
 
+    def fibonacci(self,num_of_terms):
+        terms = [0,1]
+        for i in range(num_of_terms - 2):
+            terms.append(terms[-1] + terms[-2])
+        return terms
+
+if __name__ == "__main__":
+    obje = frequent_functions()
+    print(obje.fibonacci(20))
+
     
