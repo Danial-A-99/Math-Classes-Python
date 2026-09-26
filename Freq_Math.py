@@ -21,6 +21,9 @@ class frequent_functions:
             terms.append(terms[-1] + terms[-2])
         return terms
 
+    def pascals_triangle_gen():
+        pass
+
 if __name__ == "__main__":
     obje = frequent_functions()
     print(obje.fibonacci(20))
