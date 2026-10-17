@@ -21,11 +21,32 @@ class frequent_functions:
             terms.append(terms[-1] + terms[-2])
         return terms
 
-    def pascals_triangle_gen():
-        pass
+    def pascals_triangle_gen(self,num_of_rows):
+        templis = [1]
+        triangle = [[templis[0]]]
+        supertemplis = []
+        for _ in range(num_of_rows):
+            x = 0
+            templis.append(0)
+            templis.insert(0,0)
+            for _ in templis:
+                if x == (len(templis)) - 1:
+                    templis = supertemplis
+                    triangle.append(templis)
+                    supertemplis = []
+                    break
+                else:
+                    newnum = templis[x] + templis[x+1]
+                    supertemplis.append(newnum)
+                    x+=1
+        return triangle
+
+    def display_pascals_triangle(self,num_of_rows):
+        for row in self.pascals_triangle_gen(num_of_rows):
+            print(str(row).replace("[","").replace("]",""))
 
 if __name__ == "__main__":
     obje = frequent_functions()
-    print(obje.fibonacci(20))
+    obje.display_pascals_triangle(6)
 
     
