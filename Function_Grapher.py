@@ -17,14 +17,15 @@ class Function_Grapher:
             xcoords.append(x)
         return xcoords,ycoords
 
-    def graph_function(self,nameOfFunction:str):
+    def graph_function(self,nameOfFunction:str,title:str="Graph"):
         graph = Graphing_Function()
         graph.add_x_points(self.get_equation_coordinates()[0])
         graph.add_y_points(self.get_equation_coordinates()[1])
         graph.change_graph_picture_name(nameOfFunction)
+        graph.change_title(title)
         graph.plot_graph()
 
 
 if __name__ == "__main__":
-    obje = Function_Grapher(1,3)
-    obje.graph_function("NewGraph")
+    obje = Function_Grapher(2,1,3,4)
+    obje.graph_function("NewGraph","Cubic Graph")
