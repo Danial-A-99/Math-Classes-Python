@@ -60,12 +60,12 @@ class Cubic_Function:
             return "1 Real Root, 2 Complex Roots"
 
     def get_cubic_equation_coordinates(self):
-            xcoords = []
-            ycoords = []
-            for x in range(-10,10):
-                ycoords.append(self.a*x**3 + self.b*x**2 + self.c*x + self.d)
-                xcoords.append(x)
-            return xcoords,ycoords
+        xcoords = []
+        ycoords = []
+        for x in range(-10,10):
+            ycoords.append(self.a*x**3 + self.b*x**2 + self.c*x + self.d)
+            xcoords.append(x)
+        return xcoords,ycoords
     
     def graph_cubic_function(self):
         graph = Graphing_Function()
@@ -76,5 +76,6 @@ class Cubic_Function:
 
 
 if __name__ == "__main__":
-    obje = Cubic_Function(1,-1,1,-1)
+    obje = Cubic_Function(2,3,4,-5)
     obje.graph_cubic_function()
+    print(obje.get_root_terms())
